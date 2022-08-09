@@ -13,7 +13,12 @@ defmodule Spike.LiveView.MixProject do
       source_url: "https://github.com/hubertlepicki/spike-liveview",
       homepage_url: "https://github.com/hubertlepicki/spike-liveview",
       deps: deps(),
-      package: package()
+      package: package(),
+      docs: [
+        main: "readme",
+        logo: "assets/spike-logo.png",
+        extras: ["README.md"]
+      ]
     ]
   end
 
@@ -24,7 +29,7 @@ defmodule Spike.LiveView.MixProject do
         "GitHub" => "https://github.com/hubertlepicki/spike-liveview"
       },
       files:
-        ~w(lib mix.exs mix.lock README.md LICENSE tutorial.md)
+        ~w(lib mix.exs mix.lock README.md LICENSE)
     ]
   end
 
