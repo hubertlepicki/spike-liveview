@@ -17,7 +17,7 @@ defmodule Spike.LiveView.MixProject do
       docs: [
         main: "readme",
         logo: "assets/spike-logo.png",
-        extras: ["README.md"]
+        extras: ["README.md", "components_library.md"]
       ]
     ]
   end
@@ -29,7 +29,7 @@ defmodule Spike.LiveView.MixProject do
         "GitHub" => "https://github.com/hubertlepicki/spike-liveview"
       },
       files:
-        ~w(lib mix.exs mix.lock README.md LICENSE)
+        ~w(lib mix.exs mix.lock README.md LICENSE components_library.md)
     ]
   end
 

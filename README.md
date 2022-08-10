@@ -1,4 +1,4 @@
-# Spike.LiveView
+# Readme
 
 `Spike.LiveView` provides a wrapper around
 [Phoenix.LiveView](https://hexdocs.pm/phoenix_live_view/Phoenix.LiveView.html) and
@@ -81,4 +81,6 @@ defmodule MyApp.MyFormLiveComponent do
   end
 ```
 
+For starting point to build your own form components,
+see our [Components Library](components_library.md).
 
