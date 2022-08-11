@@ -1,7 +1,15 @@
 # Components Library
 
+This library only comes with building blocks for your components, and you should
+built your own form components - or use the provided building blocks directly.
+
 Feel free to grab and customize these components to your needs, and treat them
 as a starting point when building your form builder.
+
+The code below is released under public domain:
+
+    defmodule MyAppWeb.FormComponents do
+      use MyAppWeb, :component
 
       import Spike.LiveView.Components
 
@@ -65,10 +73,11 @@ as a starting point when building your form builder.
       end
 
       def input_component(%{type: "checkbox", field: _, form: _, errors: _} = assigns) do
-        assigns = assigns
-                  |> assign_new(:checked_value, fn -> "1" end)
-                  |> assign_new(:unchecked_value, fn -> "0" end)
-                  |> assign_new(:target, fn -> nil end)
+        assigns =
+          assigns
+          |> assign_new(:checked_value, fn -> "1" end)
+          |> assign_new(:unchecked_value, fn -> "0" end)
+          |> assign_new(:target, fn -> nil end)
 
         ~H"""
         <div>
@@ -121,4 +130,6 @@ as a starting point when building your form builder.
         validations = Vex.Extract.settings(form) |> Map.get(field, [])
         {:presence, true} in validations
       end
+    end
 
+Also see [Spike Example app](https://github.com/hubertlepicki/spike_example) for more examples.
