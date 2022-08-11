@@ -7,7 +7,7 @@ defmodule Spike.LiveView.MixProject do
     [
       app: :spike_liveview,
       description: @description,
-      version: "0.2.0",
+      version: "0.2.1",
       elixir: "~> 1.13",
       start_permanent: Mix.env() == :prod,
       source_url: "https://github.com/hubertlepicki/spike-liveview",
@@ -28,8 +28,7 @@ defmodule Spike.LiveView.MixProject do
       links: %{
         "GitHub" => "https://github.com/hubertlepicki/spike-liveview"
       },
-      files:
-        ~w(lib mix.exs mix.lock README.md LICENSE components_library.md)
+      files: ~w(lib mix.exs mix.lock README.md LICENSE components_library.md)
     ]
   end
 

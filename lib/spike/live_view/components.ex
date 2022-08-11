@@ -9,7 +9,6 @@ defmodule Spike.LiveView.Components do
 
   use Phoenix.Component
 
-  
   @doc """
   Renders form, which wraps input fields, allowing for 
   `Spike.LiveView` events to be emitted on change, and
@@ -20,22 +19,23 @@ defmodule Spike.LiveView.Components do
   should reside along with any additional markup you may
   require, and the following attributes:
 
-    * form - required, should map to `Spike.Form`, usually
-      `@form` in `assigns`
-    * field - required, atom, should be one of the existing
-      fields on the form
-    * submit_event - optional, name of an event that will be
-      emitted when, for example, user hits Enter on the input
-    * target - optional, leave `nil` if your `@form` is handled
-      by LiveView, set to `@myself` (or component selector) if
-      the form changes should be handled by a component.
+  * form - required, should map to `Spike.Form`, usually
+    `@form` in `assigns`
+  * field - required, atom, should be one of the existing
+    fields on the form
+  * submit_event - optional, name of an event that will be
+    emitted when, for example, user hits Enter on the input
+  * target - optional, leave `nil` if your `@form` is handled
+    by LiveView, set to `@myself` (or component selector) if
+    the form changes should be handled by a component.
 
-          import Spike.LiveView.Components
-          ...
-          <.form_field form={@form} field={:first_name}>
-            <input type="text" name="value" value={@form_field.first_name} />
-          </.form_field>
-    """
+        import Spike.LiveView.Components
+        ...
+        <.form_field form={@form} field={:first_name}>
+          <input type="text" name="value" value={@form_field.first_name} />
+        </.form_field>
+
+  """
   def form_field(%{form: _, field: _} = assigns) do
     assigns =
       assigns
@@ -51,7 +51,7 @@ defmodule Spike.LiveView.Components do
     """
   end
 
-  @doc"""
+  @doc """
   Allows you to get a map of errors on dirty fields of given form.
 
   Attributes:
@@ -97,4 +97,3 @@ defmodule Spike.LiveView.Components do
     end
   end
 end
-
