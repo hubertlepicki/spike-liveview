@@ -10,7 +10,6 @@ The code below is released under public domain:
 
     defmodule MyAppWeb.FormComponents do
       use MyAppWeb, :component
-
       import Spike.LiveView.Components
 
       def errors_component(%{form: _, field: _, errors: _} = assigns) do
@@ -23,8 +22,10 @@ The code below is released under public domain:
         """
       end
 
-      def label_component(%{ref: _ref, text: _text, field: _field, required: required} = assigns) do
-        if required do
+      def label_component(%{ref: _ref, text: _text, field: _field} = assigns) do
+        assigns = assign_new(assigns, :required, fn -> false end)
+
+        if assigns.required do
           ~H"""
           <label for={"#{@ref}_#{@field}"}>* <%= @text %></label>
           """
@@ -115,6 +116,32 @@ The code below is released under public domain:
                 <option value={value || ""} selected={@form |> Map.get(@field) == value}><%= text %></option>
               <% end %>
             </select>
+          </.form_field>
+
+          <.errors_component form={@form} field={@field} errors={@errors} />
+        </div>
+        """
+      end
+
+      def input_component(%{type: "radio", field: _, form: _, errors: _, options: _} = assigns) do
+        assigns = assigns |> assign_new(:target, fn -> nil end)
+
+        ~H"""
+        <div>
+          <%= if @label do %>
+            <.label_component text={@label} ref={@form.ref} field={@field} required={is_required?(@form, @field)} />
+          <% end %>
+
+          <.form_field field={@field} form={@form} target={@target}>
+            <%= for {{value, text}, index} <- Enum.with_index(@options) do %>
+              <span class="float-left">
+                <input name="value" id={"#{@form.ref}_#{@field}_#{index}"} type="radio" value={value || ""} checked={@form |> Map.get(@field) == value} />
+              </span>
+              <span>
+                <.label_component text={text} ref={@form.ref} field={"#{@field}_#{index}"} />
+              </span>
+              <div class="clearfix"></div>
+            <% end %>
           </.form_field>
 
           <.errors_component form={@form} field={@field} errors={@errors} />
