@@ -57,7 +57,7 @@ defmodule Spike.LiveView do
 
     {:noreply,
      socket
-     |> Phoenix.LiveView.assign(%{
+     |> Phoenix.Component.assign(%{
        form: form,
        errors: Spike.errors(form)
      })}
