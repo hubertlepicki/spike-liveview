@@ -43,7 +43,7 @@ defmodule Spike.LiveView.MixProject do
   defp deps do
     [
       {:spike, "~> 0.2"},
-      {:phoenix_live_view, "~> 0.17"},
+      {:phoenix_live_view, "~> 0.18"},
       {:ex_doc, "~> 0.27", only: :dev, runtime: false}
     ]
   end

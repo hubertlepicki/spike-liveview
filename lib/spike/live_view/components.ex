@@ -76,16 +76,14 @@ defmodule Spike.LiveView.Components do
       assigns
       |> assign_new(:dirty_fields, fn -> Spike.dirty_fields(assigns.form) end)
 
-    field_errors = field_errors(assigns)
+    assigns = assign(assigns, :field_errors, field_errors(assigns))
 
-    if field_errors != [] do
-      ~H"""
-        <%= render_slot(@inner_block, field_errors) %>
-      """
-    else
-      ~H"""
-      """
-    end
+    ~H"""
+      <%= if @field_errors != [] do %>
+        <%= render_slot(@inner_block, @field_errors) %>
+      <% end %>
+    ~H\"""
+    """
   end
 
   defp field_errors(%{errors: errors, form: form, field: field, dirty_fields: dirty_fields}) do
