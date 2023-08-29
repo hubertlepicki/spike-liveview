@@ -65,7 +65,7 @@ defmodule Spike.LiveView.Components do
           import Spike.LiveView.Components
           ...
 
-          <.errors let={field_errors} field={@field} form={@form} errors={@errors}>
+          <.errors :let={field_errors} field={@field} form={@form} errors={@errors}>
             <span class="error">
               <%= field_errors |> Enum.map(fn {_k, v} -> v end) |> Enum.join(", ") %>
             </span>
@@ -82,7 +82,6 @@ defmodule Spike.LiveView.Components do
       <%= if @field_errors != [] do %>
         <%= render_slot(@inner_block, @field_errors) %>
       <% end %>
-    ~H\"""
     """
   end
 

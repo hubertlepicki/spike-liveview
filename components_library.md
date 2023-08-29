@@ -14,7 +14,7 @@ The code below is released under public domain:
 
       def errors_component(%{form: _, field: _, errors: _} = assigns) do
         ~H"""
-        <.errors let={field_errors} field={@field} form={@form} errors={@errors}>
+        <.errors :let={field_errors} field={@field} form={@form} errors={@errors}>
           <span class="error">
             <%= field_errors |> Enum.map(fn {_k, v} -> v end) |> Enum.join(", ") %>
           </span>
