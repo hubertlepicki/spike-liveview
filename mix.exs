@@ -7,7 +7,7 @@ defmodule Spike.LiveView.MixProject do
     [
       app: :spike_liveview,
       description: @description,
-      version: "0.3.1",
+      version: "0.3.2",
       elixir: "~> 1.13",
       start_permanent: Mix.env() == :prod,
       source_url: "https://github.com/hubertlepicki/spike-liveview",
