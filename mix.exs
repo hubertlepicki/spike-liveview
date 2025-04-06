@@ -42,8 +42,8 @@ defmodule Spike.LiveView.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:spike, "~> 0.2"},
-      {:phoenix_live_view, "~> 0.18"},
+      {:spike, "~> 0.3.0-rc.0"},
+      {:phoenix_live_view, ">= 0.18.0"},
       {:ex_doc, "~> 0.27", only: :dev, runtime: false}
     ]
   end
