@@ -7,7 +7,7 @@ defmodule Spike.LiveView.MixProject do
     [
       app: :spike_liveview,
       description: @description,
-      version: "0.3.2",
+      version: "0.4.0-rc.0",
       elixir: "~> 1.13",
       start_permanent: Mix.env() == :prod,
       source_url: "https://github.com/hubertlepicki/spike-liveview",
@@ -42,7 +42,7 @@ defmodule Spike.LiveView.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:spike, "~> 0.3.0-rc.0"},
+      {:spike, "~> 0.4.0-rc.0"},
       {:phoenix_live_view, "~> 1.0"},
       {:ex_doc, "~> 0.27", only: :dev, runtime: false}
     ]
