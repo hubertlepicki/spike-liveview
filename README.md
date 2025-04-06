@@ -153,26 +153,5 @@ Remember to mount it at router and visit <http://localhost:4000/register>:
 Usage of form components provided by this library is, however, pretty low-level, and we
 recommend you build your own form components instead.
 
-For starting point to build your own form components,
-see our [Components Library](components_library.md).
-
-With the above components, we can shorten our `render/1` function:
-
-```
-  def render(assigns) do
-    ~H"""
-    <h1>Register</h1>
-
-    <Input type="text" form={@form} field={:username} errors={@errors} />
-    <Input type="passwod" form={@form} field={:} errors={@errors} />
- 
-    <a href="#" phx-click="submit">Register!</a>
-    """
-  end
-```
-
-And that's pretty sweet!
-
-See [Components Library](components_library.md),
-[Spike Example app](https://github.com/hubertlepicki/spike_example) for more examples.
+See [Spike Example app](https://github.com/hubertlepicki/spike_example) for an examples how to build components library.
 

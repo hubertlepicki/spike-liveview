@@ -2,9 +2,6 @@ defmodule Spike.LiveView.Components do
   @moduledoc """
   Provides low-level components that can be useful to
   built higher-level form input components in your app.
-
-  For starting point to build your own form components,
-  see our [Components Library](components_library.md).
   """
 
   use Phoenix.Component
